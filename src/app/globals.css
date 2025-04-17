@@ -1,26 +1,34 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Base */
+  --color-primary-50: oklch(0.95 0.04 80);
+  --color-primary-100: oklch(0.9 0.05 82);
+  --color-primary-200: oklch(0.85 0.06 84);
+  --color-primary-300: oklch(0.8 0.07 86);
+  --color-primary-400: oklch(0.75 0.08 87);
+  --color-primary-500: oklch(0.7 0.09 88);
+  --color-primary-600: oklch(0.65 0.1 75);
+  --color-primary-700: oklch(0.6 0.11 70);
+  --color-primary-800: oklch(0.55 0.1 68);
+  --color-primary-900: oklch(0.45 0.08 65);
+  --color-primary-950: oklch(0.35 0.06 63);
+
+  /* Typography */
+  --font-display: var(--font-geist-sans), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Remove scrollbars */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* For WebKit browsers (Chrome, Safari, etc.) */
+*::-webkit-scrollbar {
+  display: none;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html, body {
+  overflow-y: auto;
 }
